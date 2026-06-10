@@ -752,74 +752,6 @@
     border-left: 2px solid var(--green);
   }
 
-  /* ── TESTIMONIALS ── */
-  #testimonials { background-color: var(--bg-cream); }
-
-  .testimonials-headline {
-    font-family: var(--serif);
-    font-size: clamp(28px, 4vw, 40px);
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 3rem;
-    line-height: 1.2;
-    max-width: 560px;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .testimonial-card {
-    background: var(--bg);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 2rem 2rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .testimonial-openquote {
-    font-family: var(--serif);
-    font-size: 56px;
-    line-height: 0.75;
-    color: var(--green);
-    margin-bottom: 1rem;
-    display: block;
-    opacity: 0.6;
-  }
-
-  .testimonial-quote {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.75;
-    color: var(--text-mid);
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-  }
-
-  .testimonial-author {
-    border-top: 1px solid var(--rule);
-    padding-top: 1rem;
-  }
-
-  .testimonial-name {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--text);
-  }
-
-  .testimonial-context {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-mute);
-    margin-top: 0.25rem;
-  }
 
   /* ── TRUST NOTE ── */
   .trust-note {
@@ -872,7 +804,6 @@
       border-bottom: 1px solid var(--rule);
       font-size: 14px;
     }
-    .testimonials-grid { grid-template-columns: 1fr; }
 
   }
 
@@ -991,14 +922,6 @@
     z-index: 1;
   }
 
-  .testimonial-card {
-    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.28s ease;
-  }
-  .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 36px rgba(26, 22, 18, 0.09);
-  }
 
   /* ── Button hover depth ── */
   .btn {
@@ -1189,42 +1112,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<!-- NOTE: Replace these placeholder quotes with real client testimonials before going live -->
-<section id="testimonials">
-  <div class="section-label">What Clients Say</div>
-  <h2 class="testimonials-headline">The work speaks for itself.</h2>
-  <div class="testimonials-grid">
-
-    <div class="testimonial-card">
-      <span class="testimonial-openquote">&ldquo;</span>
-      <p class="testimonial-quote">The structure Allan brought to my preparation and integration wasn't just helpful — it was essential. I came out of treatment with clarity about exactly what to do with what I'd found.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-name">— [Client Name]</div>
-        <div class="testimonial-context">Individual · Journey to Renewal</div>
-      </div>
-    </div>
-
-    <div class="testimonial-card">
-      <span class="testimonial-openquote">&ldquo;</span>
-      <p class="testimonial-quote">We brought Allan in to strengthen our client experience across the full journey. The quality of care he delivers — before, during, and after treatment — sets a standard our clients feel and remember.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-name">— [Director Name]</div>
-        <div class="testimonial-context">Clinical Director · Treatment Center</div>
-      </div>
-    </div>
-
-    <div class="testimonial-card">
-      <span class="testimonial-openquote">&ldquo;</span>
-      <p class="testimonial-quote">I had no idea how much the weeks after treatment would matter. Having that level of consistent, grounded support during the integration period is the reason the experience held.</p>
-      <div class="testimonial-author">
-        <div class="testimonial-name">— [Client Name]</div>
-        <div class="testimonial-context">Individual Client</div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
@@ -1312,8 +1199,6 @@
     '#individuals .how-i-work',
     '#about .section-label',
     '#about .about-grid',
-    '#testimonials .section-label',
-    '#testimonials .testimonials-headline',
     '#contact .section-label',
     '#contact .contact-inner'
   ].forEach(function (sel) {
@@ -1330,8 +1215,7 @@
   /* ── Scroll reveal: staggered grid children ── */
   [
     { parent: '.phases-grid',       child: '.phase-block' },
-    { parent: '.what-i-bring',      child: '.bring-block' },
-    { parent: '.testimonials-grid', child: '.testimonial-card' }
+    { parent: '.what-i-bring',      child: '.bring-block' }
   ].forEach(function (group) {
     var parent = document.querySelector(group.parent);
     if (!parent) return;
